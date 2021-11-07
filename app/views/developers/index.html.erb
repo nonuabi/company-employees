@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="display-6">Developers</h1>
+<div class="table-container">
+  <table class="table table-dark table-striped" id="table-section">
+    <thead>
+      <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Profile</th>
+        <th>Github id</th>
+        <th>Email id</th>
+        <th>Phone number</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @developers.each do |developer| %>
+        <tr>
+          <td><%= developer.first_name %></td>
+          <td><%= developer.last_name %></td>
+          <td><%= developer.profile %></td>
+          <td><%= developer.github_id %></td>
+          <td><%= developer.email_id %></td>
+          <td><%= developer.phone_number %></td>
+          <td><%= link_to 'Show',  developer , class: "btn btn-light"%></td>
+          <td><%= link_to 'Edit', edit_developer_path(developer) , class: "btn btn-primary"%></td>
+          <td><%= link_to 'Destroy', developer, method: :delete, data: { confirm: 'Are you sure?' } , class: "btn btn-danger" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<br>
+
+<%= link_to 'New Developer', new_developer_path, class: "btn btn-secondary" %>
+</div>

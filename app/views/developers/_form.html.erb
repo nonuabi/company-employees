@@ -1,0 +1,49 @@
+<%= form_with(model: developer, local: true) do |form| %>
+  <% if developer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(developer.errors.count, "error") %> prohibited this developer from being saved:</h2>
+
+      <ul>
+      <% developer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-section">
+  <div class="form_field-container">
+  <div class="form-floating mb-3">
+    <%= form.text_field :first_name, class: "form-control", id: "floatingInput", placeholder: "first_name"%>
+    <%= form.label :first_name, for: "floatingInput" %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= form.text_field :last_name , class: "form-control", id: "floatingInput", placeholder: "last_name"%>
+    <%= form.label :last_name, for: "floatingInput" %>
+  </div>
+
+  <div class="form-floating mb-3">
+  <%= form.text_field :profile , class: "form-control", id: "floatingInput", placeholder: "profile"%>
+  <%= form.label :profile , for: "floatingInput"%>
+  </div>
+
+  <div class="form-floating mb-3">
+  <%= form.text_field :email_id , class: "form-control", id: "floatingInput", placeholder: "email"%>
+  <%= form.label :email_id, for: "floatingInput" %>
+  </div>
+  <div class="form-floating mb-3">
+  <%= form.text_field :github_id , class: "form-control", id: "floatingInput", placeholder: "github_id"%>
+  <%= form.label :github_id, for: "floatingInput" %>
+  </div>
+
+  <div class="form-floating mb-3" >
+  <%= form.text_field :phone_number, class: "form-control", id: "floatingInput", placeholder: "phone_number" %>
+  <%= form.label :phone_number , for: "floatingInput"%>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-secondary"%>
+  </div>
+  </div>
+  </div>
+<% end %>

@@ -1,0 +1,37 @@
+<div class="display-section">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @developer.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @developer.last_name %>
+</p>
+
+<p>
+  <strong>Profile:</strong>
+  <%= @developer.profile %>
+</p>
+
+<p>
+  <strong>Github Id:</strong>
+  <%= @developer.github_id %>
+</p>
+<p>
+  <strong>Email Id:</strong>
+  <%= @developer.email_id %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @developer.phone_number %>
+</p>
+
+<div class="link-section">
+<%= link_to 'Edit', edit_developer_path(@developer) , class:"btn btn-primary"%> |
+<%= link_to 'Back', developers_path , class:"btn btn-primary"%>
+</div>
+</div>
